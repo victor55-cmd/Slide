@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Timezone Digital Clock</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .clock { font-size: 2em; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Multi-Timezone Digital Clock</h1>
+    <div id="clock" class="clock"></div>
+    <script>
+        const updateClock = () => {
+            const utc = new Date();
+            const options = { timeZone: 'UTC', hour12: false };
+            const utcTime = utc.toLocaleString('en-US', options);
+            document.getElementById('clock').innerText = `UTC Time: ${utcTime}`;
+        };
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
